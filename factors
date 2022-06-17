@@ -1,10 +1,10 @@
 #!/usr/bin/python3
 if __name__ == "__main__":
     from sys import argv
-    # from math import sqrt
+    from math import sqrt
 
     def factors():
-        """Factorize as many numbers as possible into a product of two smaller numbers
+        """Factorize many numbers possible into product of two smaller numbers
         Output format: n=p*q
         one factorization per line
         p and q don’t have to be prime numbers
@@ -18,10 +18,13 @@ if __name__ == "__main__":
                 if n % 2 == 0:
                     print("{}*2".format(n//2), end="")
                     continue
-                for i in range(3, n, 2):
+                rt = int(sqrt(n))
+                for i in range(3, rt + 1, 2):
                     if n % i == 0:
-                        print("{}*{}".format(i, n//i), end="")
+                        print("{}*{}".format(n//i, i), end="")
                         break
+                else:
+                    print(n, end="")
                 print()
 
     factors()
