@@ -1,30 +1,27 @@
 #!/usr/bin/python3
-if __name__ == "__main__":
-    from sys import argv
-    from math import sqrt
+from sys import argv
+from math import sqrt
 
-    def factors():
-        """Factorize many numbers possible into product of two smaller numbers
-        Output format: n=p*q
-        one factorization per line
-        p and q don’t have to be prime numbers
-        assume that all lines will be valid natural numbers greater than 1
-        one factorization per line
-        """
-        with open(argv[1]) as f:
-            for line in f:
-                n = int(line)
-                print("{:d}=".format(n), end="")
-                if n % 2 == 0:
-                    print("{}*2".format(n//2), end="")
-                    continue
-                rt = int(sqrt(n))
-                for i in range(3, rt + 1, 2):
-                    if n % i == 0:
-                        print("{}*{}".format(n//i, i), end="")
-                        break
-                else:
-                    print(n, end="")
-                print()
+def factor():
+    """
+    Factorize many numbers possible into product of two smaller numbers.
+"""
+    with open(argv[1]) as f:
+        for line in f:
+            n = int(line)
+            print("{:d}=".format(n), end="")
+            if n % 2 == 0:
+                print("{}*2".format(n//2))
+                continue
+            s = int(sqrt(n))
+            if s % 2 == 0:
+                s += 1
+            for i in range(3, s + 1, 2):
+                if n % i == 0:
+                    print("{}*{}".format(i, n//i))
+                    break
+            if n % i != 0:
+                print("{}={}*1".format(n, n))
 
-    factors()
+
+factor()
