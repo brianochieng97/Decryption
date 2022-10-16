@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-=======
 ## RSA Factoring Challenge 
 - RSA Factoring - How the server generates public key by multiplying two large prime integers with an aim to secure data transmission.
 ## Tasks :page_with_curl:
@@ -34,4 +32,3 @@ This task is the same as task 0, except:
 How far can you go in less than 5 seconds?
 
 - Read: [RSA Factoring Challenge](https://en.wikipedia.org/wiki/RSA_Factoring_Challenge)
->>>>>>> master
